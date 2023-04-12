@@ -1,0 +1,170 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb,amsmath,titling,enumitem}
+\usepackage[a4paper, margin=0.75in]{geometry}
+\setlength{\droptitle}{-30pt}
+\title{Homework 1 Kyle Nabors Submission}
+\author{MAT 108}
+\date{Due 11:59pm, 4/7/2023\\
+\vspace{0.1cm}
+Submit to Gradescope}
+\newcommand{\bR}{\mathbb{R}}
+\newcommand{\bQ}{\mathbb{Q}}
+\newcommand{\bC}{\mathbb{C}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\bZ}{\mathbb{Z}}
+\newcommand{\bN}{\mathbb{N}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cH}{\mathcal{H}}
+\begin{document}
+\maketitle
+\begin{enumerate}[labelindent=0pt,leftmargin=0pt]
+{\large}
+    \setlength{\itemsep}{13pt}
+    \item Let $P$ and $Q$ be propositions. Make a truth table for each of
+the following, and label it as a tautology, a contradiction, or neither.
+    \begin{enumerate}
+        \item $(P\,\land\sim\! P)\lor P$
+        
+        \begin{flushleft}
+         \begin{tabular}{||c c c c||} 
+        \hline
+        P & $\sim\! P$ & $(P\,\land\sim\! P)$ & $(P\,\land\sim\! P)\lor P$  \\ [0.5ex] 
+        \hline\hline
+        T & F & F & T \\
+        F & T & F & F \\
+        \hline
+        \end{tabular}
+        \end{flushleft}
+        
+        \item $(P\land Q)\Rightarrow P$
+        
+        \begin{flushleft}
+         \begin{tabular}{||c c c c||} 
+        \hline
+        P & Q & $(P\land Q)$ & $(P\land Q)\Rightarrow P$  \\ [0.5ex] 
+        \hline\hline
+        T & T & T & T \\
+        T & F & F & T \\
+        F & T & F & T \\
+        F & F & T & F \\
+        \hline
+        \end{tabular}
+        \end{flushleft}
+        
+        \item $(P\lor Q)\Rightarrow P$
+                
+        \begin{flushleft}
+         \begin{tabular}{||c c c c||} 
+        \hline
+        P & Q & $(P\lor Q)$ & $(P\lor Q)\Rightarrow P$  \\ [0.5ex] 
+        \hline\hline
+        T & T & T & T \\
+        T & F & T & T \\
+        F & T & T & F \\
+        F & F & F & T \\
+        \hline
+        \end{tabular}
+        \end{flushleft}
+        
+        \item $(P\,\lor\sim\! P)\Rightarrow (Q\,\land\sim\!Q)$
+                  
+        \begin{flushleft}
+         \begin{tabular}{||c c c c c||} 
+        \hline
+        P & Q & $(P\,\lor\sim\! P)$ & $(Q\,\land\sim\!Q)$ & $(P\,\lor\sim\! P)\Rightarrow (Q\,\land\sim\!Q)$ \\ [0.5ex] 
+        \hline\hline
+        T & T & T & F & F \\
+        T & F & T & F & F \\
+        F & T & T & F & F \\
+        F & F & F & F & T \\
+        \hline
+        \end{tabular}
+        \end{flushleft}
+        
+        \item $(\sim\! P\land (\sim Q\Rightarrow P))\land (Q\Rightarrow P)$
+
+        \begin{flushleft}
+        \begin{tabular}{||c c c c c c ||} 
+        \hline
+        P & Q & $(\sim Q\Rightarrow P)$ & $(\sim\! P\land (\sim Q\Rightarrow P))$ & $(Q\Rightarrow P)$ & $(\sim\! P\land (\sim Q\Rightarrow P))\land (Q\Rightarrow P)$ \\ [0.5ex] 
+        \hline\hline
+        T & T & T & F & T & F \\
+        T & F & T & F & T & F \\
+        F & T & T & T & F & F \\
+        F & F & F & F & T & F \\
+        \hline
+        \end{tabular}
+        \end{flushleft}
+        
+        \item $(P\,\land \sim\! Q)\Rightarrow\,\sim\!(P\Leftrightarrow Q)$
+
+        \begin{flushleft}
+        \begin{tabular}{||c c c c c||} 
+        \hline
+        P & Q & $(P\,\land \sim\! Q)$ & $\sim\!(P\Leftrightarrow Q)$ & $(P\,\land \sim\! Q)\Rightarrow\,\sim\!(P\Leftrightarrow Q)$ \\ [0.5ex] 
+        \hline\hline
+        T & T & F & F & T \\
+        T & F & T & T & T \\
+        F & T & F & T & T \\
+        F & F & F & F & T \\
+        \hline
+        \end{tabular}
+        \end{flushleft}
+    \end{enumerate}
+
+\vspace{25pt}
+
+    \item \begin{enumerate} \item Construct a proposition from $P$ and $Q$
+using only $\lor$ and $\sim$ that has the following truth table.
+(Parentheses are allowed, and you can use symbols multiple times.) You do
+not need to justify your answer.
+
+    \begin{center}
+    \begin{flushtable}
+    \renewcommand{\arraystretch}{1.2}
+    \centering
+    \begin{tabular}{|l|l|l|ll}
+    \hline
+    $P$ & $Q$ & ? \\ \hline
+    T & T & F\\
+    T & F & F\\
+    F & T & T\\
+    F & F & F\\ \hline
+    
+    \end{tabular}
+    \end{flushtable}
+    \end{center}
+
+    \subitem $\sim\!P \land Q$
+    \vspace{5pt}
+    
+\item Is it possible to obtain the truth table in part (a) using only
+$\Rightarrow$ and $\Leftrightarrow$ instead? If so, do it. If not, say why
+it cannot be done.
+\end{enumerate}
+
+No it is not possible to construct a proposition that satisfies the truth table given in a. This is because given the tools provided there is no way to make a false statement given that both operators are true. Therefore we cannot satisfy the first row of the table and the entire problem is impossible. 
+
+
+\item Paul, Quinn, and Rae are deciding whether to go out this evening
+or just stay home. Quinn will go out if and only if both Paul and Rae do,
+Paul will go out if Rae stays home, and Rae will go out only if exactly
+one other person goes with her. What happens? Justify your answer.
+
+\subitem Let Q be if Quinn is going out, let R be if Rae is going out, let P be if Paul is going out.
+
+\subitem Q(x) $\Leftrightarrow P \land Q$
+\subitem P(x) if $\sim\!R$
+\subitem R(x)  if $(P, \sim\!Q)\lor(\sim\!R)$
+
+\subitem R is true if x = $(P,Q,R) \lor (\sim\!P,\sim\!Q,R) \lor (\sim\!P,\sim\!Q) \lor (P,\sim\!Q,\sim\!R)$
+\subitem P is true if x = $(P,R,Q) \lor (P,Q, \sim\!R) \lor (\sim\!P,Q,R) \lor (P,\sim\!,Q,\sim\!R) \lor (P, \sim\!Q, R \lor (\sim\!P,\sim\!Q,R)$
+\subitem Q is true if x = $(P,\sim\!Q,R) \lor (\sim\!P,Q,R) \lor (P,Q,\sim\!R) \lor (\sim\!P,Q,\sim\!R) \lor (P,\sim\!Q,\sim\!R) \lor (\sim\!P,\sim\!Q,R)$
+
+\subitem $(P,\sim\!Q,\sim\!R)$ is common between all three elements.
+\subitem This means Paul will go out, Rae will stay in, and Quinn will stay in. 
+
+\end{enumerate}
+\end{document}
