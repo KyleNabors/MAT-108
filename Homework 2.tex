@@ -18,6 +18,7 @@ Submit to Gradescope}
 \newcommand{\bN}{\mathbb{N}}
 \newcommand{\cG}{\mathcal{G}}
 \newcommand{\cH}{\mathcal{H}}
+\newtheorem{theorem}{Theorem}
 \begin{document}
 \maketitle
 {\large
@@ -73,7 +74,7 @@ defined in class (you cannot use English words or define extra symbols):
 \textit{For any nonzero real number $x$, there is exactly one real number
 $y$ such that $xy=1$.}
 
-\subitem $(\forall x \in \Bbb R_{\ne 0})(\exists!y \in\bR)(xy=1)$
+\subitem $(\forall x \in \mathbb R_{\ne 0})(\exists!y \in\bR)(xy=1)$
 
 
 \item Suppose while reading a proof that you come across the following
@@ -84,8 +85,50 @@ identical rows is not invertible.} Is this reasoning correct? Justify your
 answer by labeling the assertions in this statement $P$, $Q$, and $R$ and
 making an appropriate truth table.
 
+\subitem Let P be the statement a square matrix is  not invertible
+
+\subitem Let Q be the statement a square matrix has a determinant $0$
+
+\subitem Let R be the statement a square matrix has two identical rows
+
+\subitem We can rewrite the given argument as:
+\subitem $[(P \Rightarrow Q) \land (R \Rightarrow Q)] \Rightarrow (R \Rightarrow P)$
+\subitem We can check this argument with a truth table 
+\subitem Given the tables output we can see that the argument outlined in the proof is correct. 
+
+\begin{table}[]
+    \centering
+    \begin{tabular}{c|c|c|c|c|c|c}
+        P & Q & R & $P \Rightarrow Q$ & $R \Rightarrow Q$ & $R \Rightarrow P$ & $[(P \Rightarrow Q) \land (R \Rightarrow Q)] \Rightarrow (R \Rightarrow P)$ \\
+        T & T & T & T & T & T & T \\
+        T & T & F & T & T & T & T \\
+        T & F & T & F & F & T & T \\
+        T & F & F & F & T & T & T \\
+        F & T & T & T & T & F & F \\
+        F & T & F & T & T & F & F \\
+        F & F & T & T & F & T & T \\
+        F & F & F & T & T & T & T \\
+    \end{tabular}
+    \caption{Caption}
+    \label{tab:my_label}
+\end{table}
+
 \item Use a direct proof to show that if $a,b\in\bZ$ are both positive
 and $a\,|\,b$ and $b\,|\,a$, then $a=b$.
+
+Proposition: If $a,b\in\bZ$ are both positive and $a\,|\,b$ and $b\,|\,a$, then $a=b$.
+
+\begin{therom}
+Proof: Let $a,b\in\bZ$ 
+By definition there exists some $x\in\bZ$ such that $a*b = x$
+We can rewrite this statement as $a = bx$ and $b = ax$
+Therefore we can rewrite $a\,|\,b$ as  $a\,|\,ax$ and $b\,|\,a$ as $b\,|\,bx$
+Given that $a*b = x$ this implies  $a\,|\,b = ab$ and $b\,|\,a =ab$ 
+This implies $a\,|\,b = b\,|\,a$
+By definition of cross multiplication $a^2 = b^2$
+Given that both a and b are positive this implies $a = b$ 
+\qedsymbol
+\end{therom}
 
 \item We say an integer $n$ is even if and only if $2\,|\,n$, and odd
 otherwise. Use a proof by contraposition to show that if there exists a
