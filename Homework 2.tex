@@ -6,6 +6,7 @@
 \setlength{\droptitle}{-30pt}
 \title{Homework 2}
 \author{MAT 108}
+Kyle Nabors
 \date{Due 11:59pm, 4/14/2023\\
 \vspace{0.1cm}
 Submit to Gradescope}
@@ -134,60 +135,43 @@ Proposition: There exists a positive integer $k$ such that $n^k$ is odd, then $n
 Proof: Assume n is even. Therefore $n^k$ is even for all positive intigers k.
 If n is even there exists some m such that 2m = n
 We can then rewrite $n^k$ as $(2m)^k$ or $2^k * m^k$
-Given $2^k$ is even and is a factor of $m^k$ it must be true that for  all  k $m^k$ is even. 
-Given $2^k$ and $m^k$ are even this implies $(2m)^k$ is even witch implies for all k $n^k$ is even
+Given $2^k$ is even and is a factor of $n^k$ it must be true that for  all  k $n^k$ is even. 
+
 
 \item Suppose you have just proved that if $n\in\bZ$ is odd then $n+1$
 is even. Use this fact in a proof by cases to show that $n^2-3n+8$ is even
 for all $n\in\bZ$.
 
+\vspace{10pt}
+
+Case 1:
+
 Proof: Let $n\in\bZ$ be odd and $n+1$ be even
-There exists some m such that $n^2-3n+8$ 
+There exists some positive $m\in\bZ$ such that $ m = n^2-3n+8$ 
 We can rewrite m as $m = (n^2-3n-4)+12$ 
+Using factoring we can rewrite this as $m = (n+1)(n-4)+12$
+Given that n is odd by definition $n+1$ is even for some n
+Given that n is odd by definition $n-4$ is odd for some n
+Given $n+1$ is even and any even number multiplied by an integer will also be even, thus $(n+1)(n-4)$
+Given that $(n+1)(n-4)$ is even and 12 is even $m = (n+1)(n-4)+12$ is even.
+Since $m = (n^2-3n-4)+12$ is equal to $n^2-3n+8$,  $n^2-3n+8$ is even 
 
+\vspace{10pt}
 
+Case 2:
 
+Proof: Let $n\in\bZ$ be even and $n+1$ be odd
+There exists some positive $m\in\bZ$ such that $ m = n^2-3n+8$ 
+We can rewrite m as $m = (n^2-3n-4)+12$ 
+Using factoring we can rewrite this as $m = (n+1)(n-4)+12$
+given that n is even by definition $n+1$ is odd
+n is even if and only if there exists some positive $k\in\bZ$ such that  $n=2m$ subject to $(n-4) = 2(k-2)$ if and only if $(n-4)$ is even 
+Given that n is even by definition $(n+1)$ is odd 
+Since $(n-4)$ is even, $(n+1)$ is odd it must be that $(n-4)(n+1)$ is even 
+Given that $(n-4)(n+1)$ is even and 12 is even it must be that $m = (n+1)(n-4)+12$ is even thus $n^2-3n+8$ is even
+Given that  $n^2-3n+8$ is even in both cases, $n^2-3n+8$ is even for all $n\in\bZ$ 
 
-\vspace{100pt}
-
-
-
-
-
-To prove that $n^2 - 3n + 8$ is even for all $n \in \mathbb{Z}$ using a proof by cases, we consider the two possible cases for $n$: either $n$ is odd or $n$ is even.
-
-Case 1: $n$ is odd.
-
-By the given fact, if $n$ is odd, then $n + 1$ is even. Let $n = 2k_1 + 1$ for some integer $k_1$. Then, $n + 1 = 2k_1 + 2 = 2(k_1 + 1)$, which is even. Now, let's consider the expression $n^2 - 3n + 8$:
-
-$n^2 - 3n + 8 = (2k_1 + 1)^2 - 3(2k_1 + 1) + 8$
-
-$= (4k_1^2 + 4k_1 + 1) - (6k_1 + 3) + 8$
-
-$= 4k_1^2 + 4k_1 + 1 - 6k_1 - 3 + 8$
-
-$= 4k_1^2 - 2k_1 + 6$
-
-$= 2(2k_1^2 - k_1 + 3)$
-
-Since $2k_1^2 - k_1 + 3$ is an integer, the expression $n^2 - 3n + 8$ is even in this case.
-
-Case 2: $n$ is even.
-
-Let $n = 2k_2$ for some integer $k_2$. Now, let's consider the expression $n^2 - 3n + 8$:
-
-$n^2 - 3n + 8 = (2k_2)^2 - 3(2k_2) + 8$
-
-$= 4k_2^2 - 6k_2 + 8$
-
-$= 2(2k_2^2 - 3k_2 + 4)$
-
-Since $2k_2^2 - 3k_2 + 4$ is an integer, the expression $n^2 - 3n + 8$ is even in this case.
-
-We have shown that $n^2 - 3n + 8$ is even in both cases when $n$ is odd and when $n$ is even. Therefore, $n^2 - 3n + 8$ is even for all $n \in \mathbb{Z}$.
-
-
-
+Since Both cases show that 
 
 
 \end{enumerate}
