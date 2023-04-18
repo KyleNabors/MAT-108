@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb,amsmath,titling,enumitem}
+\usepackage[a4paper, margin=0.75in]{geometry}
+\setlength{\droptitle}{-30pt}
+\title{Homework 3}
+\author{MAT 108}
+\date{Due 11:59pm, 4/21/2023\\
+\vspace{0.1cm}
+Submit to Gradescope}
+\newcommand{\bR}{\mathbb{R}}
+\newcommand{\bQ}{\mathbb{Q}}
+\newcommand{\bC}{\mathbb{C}}
+\newcommand{\bZ}{\mathbb{Z}}
+\newcommand{\bN}{\mathbb{N}}
+\begin{document}
+\maketitle
+{\large
+\begin{enumerate}[labelindent=0pt,leftmargin=0pt]
+\setlength{\itemsep}{13pt}
+\item\begin{enumerate}
+\item Make a truth table for $((P\land Q)\lor R)\Leftrightarrow
+((P\lor R)\land (Q\lor R))$.
+\item Use part (a) to prove that $((P\lor Q)\Rightarrow
+R)\Leftrightarrow ((P\Rightarrow R)\land(Q\Rightarrow R))$ is a tautology
+without making another truth table.
+\item Which of our proof methods does part (b) justify? How so? In
+your answer, note why it is relevant that the main connective is ``if and
+only if."
+\end{enumerate}
+\item Let $x\in\bR$ be positive, and consider the proposition:
+\textit{If $x$ is irrational, then $\sqrt{x}$ is irrational.}
+\begin{enumerate}
+\item Complete the following proof by contraposition: \textit{Assume
+$\sqrt{x}$ is rational. Then there exist $m,n\in\bZ$ such that ...... Thus
+$x$ is rational.}
+\item Contrapose the implications in your proof from part (a) and
+reverse their order to give a direct proof of the proposition. (Which
+version of the proof is cleaner? (That is rhetorical.))
+\end{enumerate}
+\item In our class notes there is a proof that $\sqrt{2}\not\in\bQ$.
+Use this fact in a proof by contradiction to show that there do not exist
+nonzero rational numbers $a$, $b$, and $c$ such that
+$a\sqrt{2}+b\sqrt{3}=c$. (We did not prove that $\sqrt{3}$ or $\sqrt{6}$
+is irrational, so do not use that.)
+\item Give an example, if possible, of sets $A$, $B$, and $C$ that
+satisfy the following. If no example exists, write ``Not possible." You do
+not need to include explanations with your answers.
+\begin{enumerate}
+\item $A\subseteq B$, $B\not\subseteq C$, and $A\subseteq C$.
+\item $A\not\subseteq B$, $B\subseteq C$, and $C\subseteq A$.
+\item $A\not\subseteq B$, $B\not\subseteq C$, and $A\subseteq C$.
+\item $A\subseteq B$, $B\subseteq C$, and $C\subseteq A$.
+\end{enumerate}
+\end{enumerate}
+}
+\end{document}
