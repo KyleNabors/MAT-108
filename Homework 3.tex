@@ -1,7 +1,7 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb,amsmath,titling,enumitem}
-\usepackage[a4paper, margin=0.75in]{geometry}
+\usepackage[a4paper, margin=0.5in]{geometry}
 \setlength{\droptitle}{-30pt}
 \title{Homework 3}
 \author{MAT 108}
@@ -21,9 +21,33 @@ Submit to Gradescope}
 \item\begin{enumerate}
 \item Make a truth table for $((P\land Q)\lor R)\Leftrightarrow
 ((P\lor R)\land (Q\lor R))$.
+
+\begin{table}[hbt!]
+    \centering
+    \begin{tabular}{c|c|c|c|c|c|c|c|c}
+        P & Q & R & $P \land Q$ & $(P \land Q) \lor R$ & $P \lor R$ & $Q \lor R$ & $(P \lor R) \land (Q \lor R)$ & $((P \land Q) \lor R) \Leftrightarrow (P \lor R) \land (Q \lor R)$ \\
+        T & T & T & T & T & T & T & T & T \\
+        T & T & F & T & T & T & T & T & T \\
+        T & F & T & F & T & T & T & T & T \\
+        T & F & F & F & F & T & F & F & T \\
+        F & T & T & F & T & T & T & T & T \\
+        F & T & F & F & F & F & T & F & T \\
+        F & F & T & F & T & T & T & T & T \\
+        F & F & F & F & F & F & F & F & T \\
+    \end{tabular}
+    \caption{Caption}
+    \label{tab:my_label}
+\end{table}
+
 \item Use part (a) to prove that $((P\lor Q)\Rightarrow
 R)\Leftrightarrow ((P\Rightarrow R)\land(Q\Rightarrow R))$ is a tautology
 without making another truth table.
+
+
+
+
+
+
 \item Which of our proof methods does part (b) justify? How so? In
 your answer, note why it is relevant that the main connective is ``if and
 only if."
@@ -34,15 +58,47 @@ only if."
 \item Complete the following proof by contraposition: \textit{Assume
 $\sqrt{x}$ is rational. Then there exist $m,n\in\bZ$ such that ...... Thus
 $x$ is rational.}
+
+Lemma: For all $n\in\bR$ if $n \neq 0$ there there exists $a,k\in\bR$ such that $a\geq 0$, k is odd, and $n=x^a k$. 
+
+Proof: Assume $\sqrt{x}$ is rational. 
+Then there exist $m,n\in\bR$ with $n \neq 0$ such that $\sqrt{x} = m/n$
+By the lemma, $m=x^a j$ and $n=2^b k$ for some $a,b,j,k\in\bR$ with $a,b\geq0$, and  j and k are odd.
+Since $\sqrt{x} = m/n$ we have $x = (x^a j / x^b k)^2 = x^2a j^2 / x^2b k^2$,
+which in turn shows that $x^(2b+1) k^2 = x^2a j^2$ Since 
+
+
 \item Contrapose the implications in your proof from part (a) and
 reverse their order to give a direct proof of the proposition. (Which
 version of the proof is cleaner? (That is rhetorical.))
+
+
+
+
 \end{enumerate}
 \item In our class notes there is a proof that $\sqrt{2}\not\in\bQ$.
 Use this fact in a proof by contradiction to show that there do not exist
 nonzero rational numbers $a$, $b$, and $c$ such that
 $a\sqrt{2}+b\sqrt{3}=c$. (We did not prove that $\sqrt{3}$ or $\sqrt{6}$
 is irrational, so do not use that.)
+
+
+Proof: By contradiction assume there does not exist nonzero rational numbers a, b, and c such that $a\sqrt{2} + b\sqrt{3} = c$.
+We can rewrite as $a\sqrt{2} =c - b\sqrt{3}$.
+Multiplying both sides by $sqrt{2}$ we can rewrite as 
+$2a =c\sqrt{2} - b\sqrt{6}$.
+We know$2a$ is rational as a is rational by our assumptions. 
+Given that $\sqrt{2}$ is irrational implies $c\sqrt{2}$ is irrational which implies 
+$c\sqrt{2} - b\sqrt{6}$ is irrational given an irrational number minus a irrational number such as $b\sqrt{6}$ is irrational. 
+This implies that $a\sqrt{2} + b\sqrt{3} = c$. is a false statement and is a contradiction. 
+Thus our initial assumption that there exist nonzero rational numbers $a$, $b$, and $c$ such that $a\sqrt{2} + b\sqrt{3} = c$ must be false, and there do not exist such rational numbers $a$, $b$, and $c$.
+
+
+
+
+
+
+
 \item Give an example, if possible, of sets $A$, $B$, and $C$ that
 satisfy the following. If no example exists, write ``Not possible." You do
 not need to include explanations with your answers.
