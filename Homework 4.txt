@@ -1,0 +1,97 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb,amsmath,titling,enumitem}
+\usepackage[a4paper, margin=0.75in]{geometry}
+
+\setlength{\droptitle}{-30pt}
+
+\title{Homework 4}
+\author{MAT 108}
+\date{Due 11:59pm, 5/5/2023\\ 
+\vspace{0.1cm}
+Submit to Gradescope}
+
+\newcommand{\bR}{\mathbb{R}}
+\newcommand{\bQ}{\mathbb{Q}}
+\newcommand{\bC}{\mathbb{C}}
+\newcommand{\bZ}{\mathbb{Z}}
+\newcommand{\bN}{\mathbb{N}}
+
+\begin{document}
+
+\maketitle
+
+{\large
+
+\begin{enumerate}[labelindent=0pt,leftmargin=0pt]
+
+    \setlength{\itemsep}{13pt} 
+
+    \item Find all of the inductive subsets of $\bN$ that do not contain any powers of $2$. Justify that your list of sets is complete.
+
+    Let $S$ be an inductive subset of $\bN$ that does not contain any powers of $2$. 
+    Since $S$ contains $1$, it cannot contain any power of $2$ greater than $1$. 
+    Therefore, $S$ can contain at most one power of $2$.
+    
+    Given that $S$ contains $1$ but no power of $2$, then it must contain all positive odd integers.
+    Since any odd integer $n$ can be written as $n=2k+1$ for some integer $k$, and $S$ contains $1$ and $2k$, it must also contain $n$. 
+    Therefore, the set $S_1={1,3,5,\ldots}$ is an inductive subset of $\bN$ that does not contain any powers of $2$.
+    
+    Given that $S$ contains $1$ and $2^k$ for some positive integer $k$, then $S$ cannot contain any other power of $2$, since $2^{k+1}$ is not in $S$. 
+    It must hold that, $S$ contains all positive integers less than $2^k$. Otherwise there would exist a smallest positive integer $n$ not in $S$, and then $n-1$ would be in $S$ but not $n$, contradicting the fact that $S$ is inductive. 
+    Therefore, $S$ is of the form ${1,2,3,\ldots,2^k-1}$, and $S$ is an inductive subset of $\bN$ that does not contain any other powers of $2$.
+    
+    Thus, the complete list of inductive subsets of $\bN$ that do not contain any powers of $2$ is ${1,3,5,\ldots}$ and ${1}$ together with the sets of the form ${1,2,3,\ldots,2^k-1}$ for $k\geq 1$.
+
+
+
+
+    \item Suppose $A,B\subseteq\bN$ are inductive. Are the following conclusions valid? Give either a proof or a counterexample.
+
+    \begin{enumerate}
+    \item $A\cup B$ is inductive.
+    
+    Suppose $A$ and $B$ are inductive subsets of $\mathbb{N}$. To show that $A\cup B$ is inductive, we need to verify that $1\in A\cup B$ and that whenever $n\in A\cup B$, then $n+1\in A\cup B$. Since $A$ and $B$ are both inductive, we know that $1\in A$ and $1\in B$, so $1\in A\cup B$. Now suppose $n\in A\cup B$. If $n\in A$, then $n+1\in A$ since $A$ is inductive, and therefore $n+1\in A\cup B$. If instead $n\in B$, then $n+1\in B$ since $B$ is inductive, and therefore $n+1\in A\cup B$. In either case, we see that $A\cup B$ is inductive. Therefore, the conclusion is valid.
+    
+
+    \item $A\cap B$ is inductive.
+    
+    Consider the inductive subsets $A={1,3,5,\ldots}$ and $B={2,4,6,\ldots}$. Then $A\cap B=\emptyset$, which is not inductive since it does not contain $1$. Therefore, the conclusion is not valid.
+
+
+    \item $A-B$ is inductive.
+   
+    Suppose $A$ and $B$ are inductive subsets of $\mathbb{N}$. To show that $A-B$ is inductive, we need to verify that $1\in A-B$ and that whenever $n\in A-B$, then $n+1\in A-B$. Since $1\in A$ and $1\notin B$, we have $1\in A-B$. Now suppose $n\in A-B$. Then $n\in A$ and $n\notin B$. Since $A$ is inductive, we have $n+1\in A$, and since $n\notin B$, we have $n+1\notin B$. Therefore, $n+1\in A-B$, and we see that $A-B$ is inductive. Therefore, the conclusion is valid.
+    
+
+    \item $A-B$ is not inductive.
+   
+    Consider the inductive subsets $A={1,3,5,\ldots}$ and $B={2,4,6,\ldots}$. Then $A-B={1,3,5,\ldots}$, which is inductive. Therefore, the conclusion is not valid.
+
+
+    \end{enumerate}
+
+
+
+    
+    \item Use (generalized) induction to prove that $$\prod_{k=2}^n\frac{k^2-1}{k^2}=\frac{n+1}{2n}$$ for all $n\geq 2$. (Here $\Pi$ denotes a product just as $\Sigma$ denotes a sum.)
+
+
+
+
+    \item Use strong induction to prove that every natural number greater than $1$ is equal to a product of prime numbers. (You do not need to prove any uniqueness claims about this product.)
+
+
+
+
+    \item Find two relations $R$ and $S$ on the set $\{1,2,3\}$ that satisfy $|R|,|S|\geq 3$ and $R\circ S=\emptyset$.
+
+
+
+
+    \item Let $n\geq 2$, and let $A=\{1,2,...,2n\}$. Find a relation $R$ on $A$ such that $R\circ R$ is the identity relation on $A$, but $(k,k)\not\in R$ for all $k\in A$.
+
+\end{enumerate}
+
+}
+\end{document}
