@@ -29,12 +29,38 @@ Submit to Gradescope}
 
     \item Let $R$ be a relation on a set $A$. Consider the three properties: reflexive, symmetric, and transitive.\begin{enumerate}
     \item Which property is equivalent to $R\subseteq R^{-1}$? Justify your answer.
+
+    The inverse relation $R^{-1}$ is defined as ${(y, x) | (x, y) \in R}$. So, if $R\subseteq R^{-1}$, then for every  $(x, y)$ in $R$, the pair $(y, x)$ must also be in $R$.
+
+    A symmetric relationship is defined as for all $x, y \in A$, if $(x, y) \in R$ then $(y, x) \in R$. Thus is must be that $R\subseteq R^{-1}$ is equivalent to the symmetric property. 
+    
     \item Which property is equivalent to $\text{Id}_A\subseteq R$? Justify your answer.
-    \item Find a definition of the last remaining property that uses only sets rather than elements (similar to how parts (a) and (b) give definitions using only sets and not elements). 
+
+    The identity relation on $A$, denoted by $\text{Id}_A$, is defined as ${(x, x) | x \in A}$. 
+    Thus, if $\text{Id}_A\subseteq R$, then every pair of the form $(x, x)$ is in $R$.
+
+    A relation $R$ on a set $A$ is reflexive iff, for all $x \in A$, $(x, x) \in R$. 
+    Thus, it must be that $\text{Id}_A\subseteq R$ is reflexive. 
+    
+    \item Find a definition of the last remaining property that uses only sets rather than elements (similar to how parts (a) and (b) give definitions using only sets and not elements).
+
+    The last of the three remaining properties is transitive. 
+    The following is an alternative definition of transitive. 
+    A relation $R$ is transitive iff $R \circ R \subseteq R$.
+    
     \end{enumerate}
     
 
     \item Define a relation on $\bR$ that is symmetric and transitive, but not reflexive. Justify your answer.
+
+    One simple relation on $\mathbb{R}$ that is symmetric and transitive, but not reflexive, is the "not-equal-to" relation. We define this relation $R$ as follows: for all $x, y \in \mathbb{R}$, $(x, y) \in R$ if and only if $x \neq y$.
+
+    Let's justify that this relation satisfies the properties:
+    
+    Symmetric: If $x \neq y$, then $y \neq x$. Hence, if $(x, y) \in R$, then $(y, x) \in R$. So, $R$ is symmetric.
+    Transitive: If $x \neq y$ and $y \neq z$, then $x \neq z$. Hence, if $(x, y) \in R$ and $(y, z) \in R$, then $(x, z) \in R$. So, $R$ is transitive.
+    Not reflexive: For any $x \in \mathbb{R}$, we have $x = x$, so $(x, x) \notin R$. Hence, $R$ is not reflexive.
+    Thus, the "not-equal-to" relation on $\mathbb{R}$ satisfies the required properties.
 
     \item Let $R$ be the relation on $\bN$ defined by $a R b$ iff there exists $n\in\bN$ such that $ab=n^2$. Prove that $R$ is an equivalence relation.
 
