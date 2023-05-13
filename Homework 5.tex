@@ -50,30 +50,74 @@ Submit to Gradescope}
     
     \end{enumerate}
     
-
     \item Define a relation on $\bR$ that is symmetric and transitive, but not reflexive. Justify your answer.
 
-    One simple relation on $\mathbb{R}$ that is symmetric and transitive, but not reflexive, is the "not-equal-to" relation. We define this relation $R$ as follows: for all $x, y \in \mathbb{R}$, $(x, y) \in R$ if and only if $x \neq y$.
+    $\forall x, y \in \mathbb{R}$, $(x, y) \in R$ iff $x*y \geq 1$.
 
-    Let's justify that this relation satisfies the properties:
-    
-    Symmetric: If $x \neq y$, then $y \neq x$. Hence, if $(x, y) \in R$, then $(y, x) \in R$. So, $R$ is symmetric.
-    Transitive: If $x \neq y$ and $y \neq z$, then $x \neq z$. Hence, if $(x, y) \in R$ and $(y, z) \in R$, then $(x, z) \in R$. So, $R$ is transitive.
-    Not reflexive: For any $x \in \mathbb{R}$, we have $x = x$, so $(x, x) \notin R$. Hence, $R$ is not reflexive.
-    Thus, the "not-equal-to" relation on $\mathbb{R}$ satisfies the required properties.
+    This is not reflexive because it is not possible for x and y to both equal zero. 
+    It is symmetric because $\forall x, y \in \mathbb{R}$ $xy = yx$
+    It is transitive because $(a, b) \in\bR $ and $(b,c) \in\bR $ it is also true that $(a,c) \in\bR $ 
 
     \item Let $R$ be the relation on $\bN$ defined by $a R b$ iff there exists $n\in\bN$ such that $ab=n^2$. Prove that $R$ is an equivalence relation.
 
+    Proof: 
+
+    Reflexive: When considering $aRa$, if $aRa$ then $\exists n \in\bN$ subject to $a*a = n^2 \Rightarrow a*a = n^2$ 
+
+    Symmetric: If $aRb$ then $\exists\in\bN$ subject to $a*b=n^2$ by commutativity $b*a = n^2$
+
+    Transitive: Consider the following two statements. 
+    $aRb \Rightarrow \exists \in \bN$ Subject to $ab=n^2$
+    $bRc \Rightarrow \exists \in \bN$ Subject to $bc=m^2$
+    This implies $(ab)(bc) = n^2m^2$
+    Since $a,b,c \in\bN $ then $ac*b^2 = n^2m^2  \leftrightarrow  ac = (n^2m^2)/b^2  \leftrightarrow  ac = (nm/b)^2 $
+
+    Thus R is an equivalence relation
+
     \item Recall that for each $n\in\bZ$ we define a relation $R_n$ on $\bZ$ by $a R_n b$ iff $n\,|\,(a-b)$. Find a value for $n$ such that $R_n=R_{12}\circ R_8$. Prove that your answer is correct. (Optional: Can you determine the relationship between $a$, $b$, and $n$ that guarantees $R_n=R_a\circ R_b$?)
+
+    Given $R_{12}$ and $R_8$, $a R_{12}\circ R_8 b$ holds if $\exists c \in \mathbb{Z}$ such that $12|(a-c)$ and $8|(c-b)$. 
+    Thus $a$ and $b$ leave the same remainder when divided by the least common multiple of 12 and 8. 
+    The LCM of 12 and 8 is 24, so $R_{24}=R_{12}\circ R_8$. 
+
+    Proof: Consider the following two cases 
+    Case 1: $R_{24} \subseteq R_{12}\circ R_8$.  
+    We can write $a = 24k + r$ and $b = 24l + r$ for $k, l \in\bZ$ and $0 \leq r < 24$. We can choose $c = 24k + r$, then $12|(a-c) = 12(k-l)$ and $8|(c-b) = 8(k-l)$, so $a R_{12}\circ R_8 b$.
+
+    Case 2: $R_{24} \supseteq R_{12}\circ R_8$
+    If $a R_{12}\circ R_8 b$, $\exists c$ such that $12|(a-c)$ and $8|(c-b)$. The least common multiple of 12 and 8 is 24, so $24|(a-b)$, hence $a R_{24} b$.
+
+    Therefore, $R_{24}=R_{12}\circ R_8$.
 
     \item For each $r\in\bR$ let $A_r=\{(x,y)\in\bR\times\bR:y=r-x^2\}$. Let $\mathcal{A}=\{A_r:r\in\bR\}$.\begin{enumerate}
     \item Prove that $\mathcal{A}$ is a partition of $\bR\times\bR$.
+
+    Proof: 
+    Consider that to be a partition, partition $\mathcal{P}$ of A must satisfy the following conditions:
+    If $x \in \mathcal{P}$ then $x \neq \varnothing$.
+    If $x,y \in \mathcal{P}$ then $x=y$ or $x\cap y = \varnothing$.
+    $\bigcup_{x \in P} x = A$
+
+    Therefore, $A_r\in \mathcal{A}$ is a nonempty set because $\forall r \in\bR$ $y = r-x^2$ is a parabola with infinitely many elements. 
+
+    Suppose $A_r,A_{r'}\in \mathcal{A} $ then either $r=r' \Rightarrow A_r = A_{r'}$  or $r\neq r'$ and the parabolas 
+    $y=r-x^2$ and $y=r'-x^2$ are distinct implying $A_r \cap A_{r'} = \varnothing$ 
+    
     \item Briefly describe this partition graphically. (What do the elements of $\mathcal{A}$ look like in the $x,y$-plane?)
+
+    On the $x,y$-plane the elements of $\mathcal{A}$ look like a series of inverted parabolas with expanding tails as they increase their y intercept with intercepts being both positive and negative. At $r=0$ the parabola would pass through the origin. When r is negative the y intercept of the parabola is negative and when r is positive the y intercept of the porabola is positive. 
+    
     \item Define an equivalence relation $S$ on $\bR\times\bR$ such that $(\bR\times\bR)/S=\mathcal{A}$.
+
+    Let $(x,y)S(\tilde{x} \tilde{y})$ subject to $y+x^2 = \tilde{y} \tilde{x}^2$.
+    Because $y=r-x^2 \Rightarrow r=y+x^2$ if $(x,y)$ is related to $(\tilde{x} \tilde{y})$ then $r= \tilde{y} \tilde{x}^2$
+    
     \item List three different elements of $S$.
+
+    $((0,0),(-2,-4)),((0,0),(2,-4),((1,1),(0,2))\in S$
+    
     \end{enumerate}
 
-    
     \end{enumerate}
 
 }
