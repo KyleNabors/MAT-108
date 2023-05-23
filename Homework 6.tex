@@ -1,0 +1,59 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb,amsmath,titling,enumitem}
+\usepackage[a4paper, margin=0.75in]{geometry}
+
+\setlength{\droptitle}{-30pt}
+
+\title{Homework 6}
+\author{MAT 108}
+\date{Due 11:59pm, 5/26/2023\\ 
+\vspace{0.1cm}
+Submit to Gradescope}
+
+\newcommand{\bR}{\mathbb{R}}
+\newcommand{\bQ}{\mathbb{Q}}
+\newcommand{\bC}{\mathbb{C}}
+\newcommand{\bZ}{\mathbb{Z}}
+\newcommand{\bN}{\mathbb{N}}
+
+\begin{document}
+ 
+\maketitle
+
+{\large
+
+\begin{enumerate}[labelindent=0pt,leftmargin=0pt]
+
+    \setlength{\itemsep}{13pt} 
+
+    \item Determine if the following relations $R\subseteq A\times B$ are functions from $A$ to $B$. Briefly justify your answers.\begin{enumerate}
+    \item $R\subseteq\bR\times\bQ$ defined by $xR\,y$ iff $x=y$.
+    \item $R\subseteq\bN\times\bN$ defined by $aR\,b$ iff $b=1$.
+    \item $R\subseteq (\bZ/R_3)\times(\bZ/R_6)$ defined by $\overline{a}R\,\overline{b}$ iff $\overline{b}\subseteq\overline{a}$.
+    \end{enumerate}
+    
+
+    \item Prove that $f\subseteq A\times B$ is a bijective function if and only if $f^{-1}\subseteq B\times A$ is a bijective function.
+
+    \item Define $f:\{(x,y)\in\bR\times\bR:0<x^2+y^2<1\}\to\{(x,y)\in\bR\times\bR:x^2+y^2=1\}$ by $$f\big((x,y)\big) = \left(\frac{x}{\sqrt{x^2+y^2}},\frac{y}{\sqrt{x^2+y^2}}\right).$$
+    \begin{enumerate}
+    \item Prove that $f$ is surjective.
+    \item Prove that $f$ is not injective.
+    \item Find a set $S\subset\text{dom}(f)$ such that $f|_S$ is a bijection. Prove that your answer is correct. (Recall that $f|_S=\{(a,b)\in f: a\in S\}$.)
+    \end{enumerate}
+
+    \item Suppose $f:A\to B$ is injective.
+    \begin{enumerate}
+    \item Must there exist a function $g:B\to A$ such that $f\circ g = \text{Id}_B$? If yes, prove it. If no, find a counterexample.
+    \item Must there exist a function $g:B\to A$ such that $g\circ f = \text{Id}_A$? If yes, prove it. If no, find a counterexample.
+    \end{enumerate}
+
+Note that your answers for questions 4(a) and 4(b) would swap if we assume $f$ is surjective instead of injective.
+
+    
+    \end{enumerate}
+
+}
+\end{document}
+
