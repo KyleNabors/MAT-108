@@ -1,0 +1,225 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb,amsmath,titling,enumitem,mathrsfs}
+\usepackage[a4paper, margin=0.75in]{geometry}
+
+\setlength{\droptitle}{-30pt}
+
+\title{Homework 7}
+\author{MAT 108}
+\date{Due 11:59pm, 6/2/2023\\ 
+\vspace{0.1cm}
+Submit to Gradescope}
+
+\newcommand{\bR}{\mathbb{R}}
+\newcommand{\bQ}{\mathbb{Q}}
+\newcommand{\bC}{\mathbb{C}}
+\newcommand{\bZ}{\mathbb{Z}}
+\newcommand{\bN}{\mathbb{N}}
+\newcommand{\sP}{\mathscr{P}}
+\newcommand{\fc}{\mathfrak{c}}
+
+\begin{document}
+ 
+\maketitle
+
+{\large
+
+\begin{enumerate}[labelindent=0pt,leftmargin=0pt]
+
+    \setlength{\itemsep}{13pt} 
+
+    \item \begin{enumerate}\item Let $A$ and $B$ be finite sets of cardinality $n$ and $m$. Prove that $|A\times B|=nm$ using the definition of cardinality (which is $|A|=n$ iff there is a bijection $f:A\to\{1,...,n\}$).
+
+    Proof:
+    Let the bijections for A and B be denoted as 
+    $f:A\to\{1,...,n\}$ and $g:B\to\{1,...,m\}$
+
+    Thus, we can define $h:A \times B \rightarrow \{1,...,nm\}$ as the following:
+    $\forall (a,b) \in A \times B$ let $h(a,b) = (f(a)-1)*m+g(b)$
+
+    Assume that $h(a_1,b_1)=h(a_2,b_2)$ for some $(a_1,b_1),(a_2,b_2)\in A\times B$
+    Thus, $(f(a_1)-1)*m+g(b_1) = (f(a_2)-1)*m+g(b_2)$ 
+    $\leftrightarrow$ $(f(a_1)-f(a_2))m = g(b_2)-g(b_1)$
+    Since $f$ and $g$ are injective this only holds if $a_1 = a_2$ and $b_1 = b_2$.
+    Hence $h$ is injective. 
+
+    For some $k \in {1,...,nm}$ There exists $(a,b) \in A \times B$ such that 
+    $h(a,b) = k$. Let $p = [k/m] $ and $q=k-(p-1)*m$.
+    Since $f$ and $g$ are surjective, $\exists a \in A \land b \in B$
+    such that $f(a)=p$ and $g(b)=q$
+    Thus, $h(a,b) = (f(a)-1)*m + g(b)$
+    $\leftrightarrow$ $(f(a_1)-f(a_2))m = g(b_2)-g(b_1)$
+    Since $f$ and $g$ are surjective this only holds if $a_1 = a_2$ and $b_1 = b_2$.
+    Hence $h$ is surjective. 
+    Thus h is surjective
+
+    Since $h$ is both injective and surjective, it is bijective.
+    Therefore $|A \times B| =nm$
+    $\Box$
+
+    
+    \item For any $k\in\bN$ and any finite sets $A_1,...,A_k$, prove that $|A_1\times\cdots\times A_k|=|A_1|\cdots|A_k|$ by using part (a) and induction on $k$.
+
+    Base Case: Assume $k=1$. Thus, we have one set $A_1$. The Cartesian product of a single set is itself, 
+    so $|A_1 \times ... \times A_k| = |A_1|$.
+
+    Inductive Step: Assume the proposition is true for $k=n$, as in 
+    $|A_1\times\cdots\times A_n|=|A_1|\cdots|A_n|$. 
+    Consider the sets $A_1, A_2, ..., A_{n+1}$. We can then group the first n-sets and consider their cartesian product as a single set. We will show this set as $B = A_1, A_2, ..., A_n$ 
+
+    By inductive hypothesis we have $|B| = |A_1|... |A_n|$
+
+    Consider the cartesian product $B \times A_{n+1}$ which equals $A_1 \times ... \times A_{n+1}$.
+
+    By (a) we know $|B \times A_{n+1}| = |B|*|A_{n+1}|$.
+    Substuiting in $|B|$ we have $|B\times A_{n+1}| = |A_1|...|A_n|*|A_{n+1}|$
+    Therefore the statement holds for all $k\in\bN$ 
+    $\Box$
+
+    \end{enumerate}
+    
+
+    \item Let $A$ be a finite, nonempty set of cardinality $n$, and let $\sP(A)$ denote the set of all subsets of $A$ (called the \textit{power set} of $A$). \begin{enumerate}\item Find a bijection $f:\sP(A)\to\{0,1\}^n$, where $\{0,1\}^n$ denotes the Cartesian product of $n$ copies of $\{0,1\}$. Prove that your function is a bijection. \textit{Hint: Which $n$-tuple is a natural choice for $f(\emptyset)$? Which $n$-tuple is a natural choice for $f(A)$? How might you relate the 1's and 0's in an $n$-tuple to the elements of a subset?}
+
+    Proof: Let the function $f$ be defined as follows: $f:P(A)\rightarrow {0,1}^n$.
+    Assume that $A = \{a_1,a_2,...,a_n\}$ for each subset $S\subseteq A$
+    We can then associate it with an n-tuple in ${0,1}^n$ 
+    Hence $f(S)=\{x_1,x_2,...,x_n\}$ where $x_i = 1$ if $a_i\in  S$ and $x_i = 0 $ if $a_i \notin S$.
+
+    Assume that $f(S_1)=f(S_2)$ for some $S_1,S_2 \subseteq A$. 
+    This implies that $\forall i, x_i = 1$ if $a_i \in S_1$ and $a_i \in S_2$,
+    and $a_i \in S_2$ and $x_i = 0$ if $a_i \notin S_1$ and $a_i \notin S_2$.
+    Thus $S_1 = S_2$ and $f$ is injective. 
+
+    For any n-tuple $(x_1, x_2,...,x_n) \in \{0,1\}^n$ $\exists S \subseteq A$ such that $f(S) = (x_1, x_2, ..., x_n)$. We define $S = \{a_i|x_i = 1\}$. Thus $f(S) = (x_1, x_2, ..., x_n)$ and $f$ is surjective. 
+
+    Since $f$ is both injective and surjective, it is a bijection. 
+    Therefore there exists a bijection between $P(A)$ and ${0,1}^n$ 
+    $\Box$
+
+    
+    \item Use question 1(b) to determine, with proof, the cardinality of $\sP(A)$.
+
+    Proof:
+    From 2(a) we know there is a bijection between the power set $A$ denoted as $P(A)$, and the set $\{0,1\}^n$ where $n=|A|$
+
+    From 1(b) we know the cardinality of the cartesian product of k finite sets is equal the the product of their cardinalities. 
+
+    Applying this to the set $\{0,1\}^n$ we find that 
+    $|\{0,1\}^n| = |\{0,1\}|^n = 2^n$ becasue the set $\{0,1\}$ has a cardinality of 2.
+
+    Since there is bijection between $P(A)$ and $\{0,1\}^n$, they much have the same cardinality of the power set $A$.
+    Thus, $|P(A)| = 2^n$
+    $\Box$ 
+    
+    \end{enumerate}
+
+    \item Let $A$ be a finite, nonempty set of cardinality $n$. \begin{enumerate}\item Prove that if $a\in A$, then $|A-\{a\}|=n-1$. \textit{Hint: If the bijection $f:A\to\{1,...,n\}$ happens to satisfy $f(a)=n$, then there is little to do. What if $f(a)\neq n$?}
+
+
+    Proof:
+    Let $f:A\rightarrow \{1, ..., n\}$ be a bijection. 
+    If $f(a) = n$, then $f$ restricted to $A - \{a\}$ is already a bijection between $A - \{a\}$ and $\{1, ..., n-1\}$, so we can let $g = f$ restricted to $A - \{a\}$.
+    
+    If $f(a) \neq n$, then we can define $g$ as:
+   
+    For any $x \in A - \{a\}$, let
+    $g(x) = \begin{cases} 
+    f(x) & \text{if } f(x) < f(a) \\
+    f(x) - 1 & \text{if } f(x) > f(a) 
+    \end{cases}$
+    
+    Assume $g(x_1) = g(x_2)$ for some $x_1, x_2 \in A - \{a\}$. If $f(x_1) < f(a)$ and $f(x_2) < f(a)$, or $f(x_1) > f(a)$ and $f(x_2) > f(a)$, then $f(x_1) = f(x_2)$, so $x_1 = x_2$ because $f$ is injective. If one of $f(x_1)$ and $f(x_2)$ is less than $f(a)$ and the other is greater than $f(a)$, then $g(x_1) \neq g(x_2)$, which is a contradiction. Hence, $g$ is injective.
+    
+    For any $k \in \{1, ..., n-1\}$, we can find $x \in A - \{a\}$ such that $g(x) = k$. If $k < f(a)$, then there exists $x \in A$ such that $f(x) = k$, and we can let this $x$ be the preimage of $k$xunder $g$. If $k \geq f(a)$, then there exists $x \in A$ such that $f(x) = k + 1$, and we can let this $x$ be the preimage of $k$ under $g$. 
+    Thus $g$ is surjective.
+    
+    Since $g$ is both injective and surjective, it is a bijection. 
+    Therefore, $|A - \{a\}| = n - 1$.
+    $\Box$
+
+    
+    \item Let $B$ be a subset of $A$ that has cardinality $m\in\bN\cup\{0\}$. Use part (a) and induction on $m$ to prove that $|A-B| = n-m$. You may use $A-B=(A-(B-\{a\}))-\{a\}$ for any $a\in B$ without proof.
+
+    Proof:
+    Base Case $m=0$: if $m=0$ then $B$ is an empty set.
+    Thus $A - B = A$ and $|A - B| = |A| = n$ 
+    which implies $n - m = n - 0 = n$
+    Thus the base case holds
+
+    Inductive Step: Assume $|A - B| = n - k$ is true for some $k=m$ that is a 
+    subset $B$ of $A$ with $|B| = k$
+    
+    Consider the subset $|B'|$ of $A$ with $|B'| = k+1$ 
+    Consider $\exists a \in B'$, thus $B' - \{a\}$ is a subset of $A$ with cardinality $k$. 
+    By the inductive Hypothesis we have $|A - (B' - \{a\})| = n - k$. 
+
+    Consider the set  $A - B' = (A - (B' - \{a\})) - \{a\}$. From part (a), we know that $|(A - (B' - \{a\})) - \{a\}| = |A - (B' - \{a\})| - 1 = (n - k) - 1 = n - (k+1)$.
+
+
+    Thus, by induction, the statement $|A-B| = n-m$ is true for all \(m \in \mathbb{N} \cup \{0\}\).
+
+
+    
+    \end{enumerate}
+
+    \item Let $A$ be an infinite subset of $\bN$. Prove that $f:A\to \bN$ defined by $f(a)=|\{b\in A:b\leq a\}|$ is a bijection, and conclude that $|A|=\aleph_0$. \textit{Hint: Question 3 should be useful.}
+
+    Proof:
+    To prove $f:A\to \bN$ defined by $f(a)=|\{b\in A:b\leq a\}|$ is a bijection, we will show that it is injective and surjective. 
+
+    Assume $f(a_1)=f(a_2)$ for some $a_1,a_2 \in A$. 
+    Thus the number of elements in $A$ are less than or equal to $a_1$ are the same number of elements in $A$ that are less than or equal to $a_2$.
+
+    Since $A \subseteq\bN$ any two different elements of $A$ must satisfy either $a_1 > a_2$ or $a_1 < a_2$. 
+    Assume $a_1 \neq a_2$. 
+    Without loss of generality assume $a_1 < a_2$. 
+    Thus, all elements of A less than or equal to $a_1$ are less than or equal to $a_2$ But $a_2$ is in itself an additinal element less than or equal to $a_2$. This contradicts $f(a_1)=f(a_2)$
+
+    Therefore it must hold $a_1 = a_2$.
+    Thus $f$ is injective. 
+
+    Since $A$ is an infinte subset of $\bN$ we can list its elements in increasing order with the n-th smallest element of this list being $a_n$. 
+    By definition of $f$, $f(a_n)$ us the number of elements in $A$ that are less than or equal to $a_n$. Thus $f(a_n)=n$
+
+    Thus $\forall n \in\bN$, $\exists a \in A$ such that $f(a) = n$ which implies $f$ is surjective 
+
+    Thus, since $f$ is both injective and surjective, it is bijective. 
+    Thus $|A| = \aleph_0$ 
+    
+
+
+
+
+
+    \item Prove that $|(-3,\infty)|=\fc$ by finding a bijection $f:(0,1)\to(-3,\infty)$. Prove that your function is a bijection.
+
+    Observe that for $f:(0,1)\to(-3,\infty)$, $f(x)= 1/(x+1) -4 $ is a bijection from $(0,1)\to(-3,\infty)$
+
+    Assume that $f(x_1) = f(x_2)$ for some $x_1,x_2 \in (0,1)$
+    This implies that $1/(x_1+1) -4 = 1/(x_2+1) -4$ Rearanging this equation we get that $x_1 = x_2$ 
+    Thus $f$ is injective. 
+
+    Suppose that $\forall y \in (-3,\infty), \exists x \in (0,1)$ such that $f(x) = y$
+
+    We can write $1/(x+1) -4 = y$ as $x = 1 - 1/y+4$   
+    Since $y \in (-3,\infty)$ we have $y+4 \in (1,\infty)$ 
+    Thus, $1/(y+4) \in (1,0)$.
+    Therefore $x = 1 - 1/y+4 \in (0,1)$. 
+    Thus, $\forall y \in (-3,\infty), \exists x \in (0,1)$ such that $f(x)=y$ and $f$ is surjective 
+    Since $f$ is injective and surjective, $f$ is a bijection. 
+    Thus $|(-3,\infty)| = \fc$ 
+
+
+
+
+
+
+
+    
+    
+    \end{enumerate}
+
+}
+\end{document}
